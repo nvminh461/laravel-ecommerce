@@ -1,9 +1,38 @@
-# Advance  Multi Language Support Laravel 8 Ecommerce Project
-## Website Live Preview
-[`click`](https://shopbd.imzuyel.com/)
+# Instructions: How to Run the Project?
 
-## Frontend
-![E-mart-Happy-to-shop](https://user-images.githubusercontent.com/43112820/165052737-ff066b7e-56fb-4afa-92cb-402e3bf02f49.png)
+After downloading the project, unzip the project file.
 
-## Backend
-![E-mart _ All Products](https://user-images.githubusercontent.com/43112820/167244354-de1bd266-ae91-410a-8979-f4daa201f2f2.png)
+Open the project folder, check the `env` file, and update the database information.
+
+Create a MySQL database with the name provided in the `env` file.
+
+Next, open the project in the Terminal or Command Prompt.
+
+Install node packages:
+```bash
+npm install
+```
+Install composer dependencies:
+```bash 
+composer install
+```
+Run the migration:
+```bash
+php artisan migrate
+```
+Run the seeder:
+```bash
+php artisan db:seed
+```
+Generate the application key:
+```bash
+php artisan key:generate
+```
+Link the storage:
+```bash
+php artisan storage:link
+```
+Run the project:
+```bash
+php artisan serve
+```
