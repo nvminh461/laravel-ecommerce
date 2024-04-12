@@ -51,15 +51,6 @@
               @enderror
 
             </div>
-            <div class="form-group">
-              <label class="col-form-label">নাম</label>
-              <input type="text" class="form-control  @error('subsubcategory_name_bn') is-invalid @enderror" name="subsubcategory_name_bn" value="{{ $subsubcategory->subsubcategory_name_bn ?? old('subsubcategory_name_bn') }}" placeholder="উপ ক্যাটাগরি নাম" {{ !isset($subsubcategory) ? 'required' : '' }}>
-              @error('subsubcategory_name_bn')
-              <span class="text-danger" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-              @enderror
-            </div>
           </div>
         </div>
       </div>
@@ -84,7 +75,7 @@
                   {{ $subsubcategory->category_id == $category->id ? 'selected' : '' }}
                   @endisset
                   >
-                  {{ $category->category_name_en }} / {{ $category->category_name_bn }}
+                  {{ $category->category_name_en }}
                 </option>
                 @endforeach
 

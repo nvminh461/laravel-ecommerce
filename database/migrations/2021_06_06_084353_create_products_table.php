@@ -34,21 +34,16 @@ class CreateProductsTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->string('product_name_en');
-            $table->string('product_name_bn');
             $table->string('product_slug_en');
-            $table->string('product_slug_bn');
             $table->string('product_code')->nullable();
             $table->string('product_qty');
             $table->string('product_tags_en')->nullable();
-            $table->string('product_tags_bn')->nullable();
             $table->string('size')->nullable();
             $table->string('product_color')->nullable();
             $table->string('price');
             $table->string('discount')->nullable();
             $table->string('short_description_en')->nullable();
-            $table->string('short_description_bn')->nullable();
             $table->longText('long_description_en');
-            $table->longText('long_description_bn');
             $table->string('image')->nullable();
             $table->integer('hot_deals')->nullable();
             $table->integer('featured')->nullable();
@@ -56,9 +51,7 @@ class CreateProductsTable extends Migration
             $table->integer('special_deals')->nullable();
             $table->boolean('status')->default(true);
             $table->text('meta_keywords_en')->nullable();
-            $table->text('meta_keywords_bn')->nullable();
             $table->text('meta_description_en')->nullable();
-            $table->text('meta_description_bn')->nullable();
             $table->timestamps();
         });
     }

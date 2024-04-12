@@ -43,7 +43,6 @@ Route::get('/user/coupon-remove', [CustommerController::class, 'couponRemove']);
 
 
 Route::get('/', [HomeController::class, 'index'])->name('frontend.home');
-Route::get('/bn/details/{category}/{slug}', [HomeController::class, 'detailsbn'])->name('frontend.detailsbn');
 Route::get('/en/details/{category}/{slug}', [HomeController::class, 'detailsen'])->name('frontend.detailsen');
 
 
@@ -68,12 +67,9 @@ Route::get('/shop/cart', [CartController::class, 'myCart'])->name('myCart');
 //=========Category wise product===========//
 
 Route::get('/en/{category}', [HomeController::class, 'categoryproductsen'])->name('categoryproductsen');
-Route::get('/bn/{category}', [HomeController::class, 'categoryproductsbn'])->name('categoryproductsbn');
 Route::get('/en/{category}/{subcategory}', [HomeController::class, 'subcategoryproductsen'])->name('subcategoryproductsen');
-Route::get('/bn/{category}/{subcategory}', [HomeController::class, 'subcategoryproductsbn'])->name('subcategoryproductsbn');
 // Subcategory wise product
 Route::get('/en/{category}/{subcategory}/{subsubcategory}', [HomeController::class, 'subsubcategoryproductsen'])->name('subsubcategoryproductsen');
-Route::get('/bn/{category}/{subcategory}/{subsubcategory}', [HomeController::class, 'subsubcategoryproductsbn'])->name('subsubcategoryproductsbn');
 
 
 //============ Filter ==============//

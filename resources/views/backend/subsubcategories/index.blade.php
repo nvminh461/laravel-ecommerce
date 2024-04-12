@@ -44,7 +44,6 @@ All subsubcategories
             <th>Category</th>
             <th>Sub Category</th>
             <th>Name(en)</th>
-            <th>Name(bn)</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
@@ -56,7 +55,6 @@ All subsubcategories
             <td>{{ $subsubcategory->category->category_name_en }}  </td>
             <td>{{ $subsubcategory->subcategory->subcategory_name_en }}  </td>
             <td>{{ $subsubcategory->subsubcategory_name_en }}</td>
-            <td>{{ $subsubcategory->subsubcategory_name_bn }}</td>
             <td>
               @if ($subsubcategory->status)
               <span class="badge badge-info rounded " data-toggle="tooltip" title="subSubCategory status is true &#128077">Active</span>

@@ -34,7 +34,6 @@ class CartController extends Controller
                     'image'                 => $product->image,
                     'color'                 => $request->color,
                     'size'                  => $request->size,
-                    'name_bn'               => $product->product_name_bn,
                 ],
             ]);
             return response()->json(['success' => 'Successfully Added on Your Cart']);
@@ -51,9 +50,7 @@ class CartController extends Controller
                     'color'                 => $request->color,
                     'size'                  => $request->size,
                     'name_en'               => $product->product_name_en,
-                    'name_bn'               => $product->product_name_bn,
                     'product_slug_en'       => $product->product_slug_en,
-                    'product_slug_bn'       => $product->product_slug_bn,
 
                 ],
             ]);

@@ -32,14 +32,11 @@ class BrandController extends Controller
         Gate::authorize('app.brands.create');
         $this->validate($request, [
             'brand_name_en'     => 'required|string|unique:brands,brand_name_en',
-            'brand_name_bn'     => 'required|string|unique:brands,brand_name_bn',
             'image'       => 'nullable|image|mimes:jpg,png,jpeg,svg',
         ]);
         $brand = Brand::create([
             'brand_name_en'     => $request->brand_name_en,
             'brand_slug_en'     => Str::slug($request->brand_name_en),
-            'brand_name_bn'     => $request->brand_name_bn,
-            'brand_slug_bn'     => Str::slug($request->brand_name_bn),
             'status'            => $request->filled('status'),
         ]);
         $file                   = $request->hasFile('image');
@@ -69,8 +66,6 @@ class BrandController extends Controller
         $brand->update([
             'brand_name_en'      => $request->brand_name_en,
             'brand_slug_en'      => Str::slug($request->brand_name_en),
-            'brand_name_bn'      => $request->brand_name_bn,
-            'brand_slug_bn'      => Str::slug($request->brand_name_bn),
             'status'             => $request->filled('status'),
         ]);
         $file                    = $request->hasFile('image');

@@ -43,7 +43,6 @@ All Slider
             <th>#</th>
             <th>Image</th>
             <th>Title(en)</th>
-            <th>Title(bn)</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
@@ -61,7 +60,6 @@ All Slider
               </div>
             </td>
             <td>{{ $slider->title_en }}</td>
-            <td>{{ $slider->title_bn }}</td>
             <td>
                 @if ($slider->status)
                 <a class="badge-info updateSliderStatus" id="slider-{{ $slider->id }}" slider_id="{{ $slider->id }}" href="javascript:;">Active</a>

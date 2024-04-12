@@ -43,7 +43,6 @@ All subcategories
             <th>#</th>
             <th>Category</th>
             <th>Name(en)</th>
-            <th>Name(bn)</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
@@ -52,9 +51,8 @@ All subcategories
           @foreach ($subcategories as $key => $subcategory)
           <tr>
             <td>{{ $key + 1 }}</td>
-            <td>{{ $subcategory->category->category_name_en }} / {{ $subcategory->category->category_name_bn }} </td>
+            <td>{{ $subcategory->category->category_name_en }}</td>
             <td>{{ $subcategory->subcategory_name_en }}</td>
-            <td>{{ $subcategory->subcategory_name_bn }}</td>
             <td>
               @if ($subcategory->status)
               <span class="badge badge-info rounded " data-toggle="tooltip" title="SubCategory status is true &#128077">Active</span>

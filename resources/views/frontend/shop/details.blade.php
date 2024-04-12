@@ -28,44 +28,13 @@
         <div class="container">
           <div class="row al_center">
             <div class="col">
-              @if (session()->get('language') === 'bangla')
-                <nav class="sp-breadcrumb">
-                  <a href="{{ route('frontend.home') }}">হোম</a><i class="facl facl-angle-right"></i><a
-                    href="{{ route('categoryproductsbn', $product->category->category_slug_bn) }}">{{ $product->category->category_name_bn }}</a><i
-                    class="facl facl-angle-right"></i>{{ $product->product_name_bn }}</a>
-                </nav>
-              @else
                 <nav class="sp-breadcrumb">
                   <a href="{{ route('frontend.home') }}">Home</a><i class="facl facl-angle-right"></i><a
                     href="{{ route('categoryproductsen', $product->category->category_slug_en) }}">{{ $product->category->category_name_en }}</a><i
                     class="facl facl-angle-right"></i>{{ $product->product_name_en }}</a>
                 </nav>
-              @endif
 
             </div>
-            @if (session()->get('language') === 'bangla')
-              <div class="col-auto flex al_center">
-
-                @if (isset($previous_product))
-                  <a href="{{ route('frontend.detailsbn', ['category' => $previous_product->category->category_slug_bn, 'slug' => $previous_product->product_slug_bn]) }}"
-                    class="pl__5 pr__5 fs__18 cd chp ttip_nt tooltip_bottom_left"><i class="las la-angle-left"></i><span
-                      class="tt_txt">
-                      {{ $previous_product->product_name_bn }}
-                    </span></a>
-                @endif
-
-                <a href="{{ route('categoryproductsbn', $product->category->category_slug_bn) }}"
-                  class="pl__5 pr__5 fs__20 cd chp ttip_nt tooltip_bottom_left"><i
-                    class="fwb iccl iccl-grid fs__15"></i><span
-                    class="tt_txt">{{ $product->category->category_name_bn }}</span></a>
-
-                @if (isset($next_product))
-                  <a href="{{ route('frontend.detailsbn', ['category' => $next_product->category->category_slug_bn, 'slug' => $next_product->product_slug_bn]) }}"
-                    class="pl__5 pr__5 fs__18 cd chp ttip_nt tooltip_bottom_left"><i class="las la-angle-right"></i><span
-                      class="tt_txt">{{ $next_product->product_name_bn }}</span></a>
-                @endif
-              </div>
-            @else
               <div class="col-auto flex al_center">
 
                 @if (isset($previous_product))
@@ -88,7 +57,6 @@
 
                 @endif
               </div>
-            @endif
           </div>
         </div>
       </div>
@@ -120,7 +88,7 @@
                         data-src="/{{ $product->image }}"
                         data-width="1058"
                         data-height="1039"
-                        data-cap="{{ session()->get('language') === 'bangla'? $product->product_name_bn : $product->product_name_en}}">
+                        data-cap="{{$product->product_name_en}}">
                       </div>
 
                       @forelse ($product->multi_images as $key=> $item)
@@ -134,7 +102,7 @@
                           data-src="/{{ $item->image_name }}"
                           data-width="1058"
                           data-height="1039"
-                          data-cap="{{ session()->get('language') === 'bangla'? $product->product_name_bn : $product->product_name_en}} {{ $key+1 }}">
+                          data-cap="{{ $product->product_name_en}} {{ $key+1 }}">
                         </div>
                       @empty
                       @endforelse
@@ -180,11 +148,7 @@
                 <div class="theiaStickySidebar">
                   <div class="kalles-section-pr_summary kalles-section summary entry-summary mt__30">
                     <h1 class="product_title entry-title fs__16">
-                      @if (session()->get('language') === 'bangla')
-                        {{ $product->product_name_bn }}
-                      @else
                         {{ $product->product_name_en }}
-                      @endif
                     </h1>
 
 
@@ -204,11 +168,7 @@
                     </div>
                     <div class="pr_short_des">
                       <p class="mg__0">
-                        @if (session()->get('language') === 'bangla')
-                          {{ $product->short_description_bn }}
-                        @else
                           {{ $product->short_description_en }}
-                        @endif
                       </p>
                     </div>
                     <div class="variations mb__40 style__circle size_medium style_color des_color_1">
@@ -316,18 +276,10 @@
                       <span class="sku_wrapper"><span class="cb">SKU:</span> <span id="sku"
                           class="sku value cg">
                           {{ $product->product_code }}</span></span>
-
-                      @if (session()->get('language') === 'bangla')
-                        <span class="posted_in"><span class="cb">ক্যাটাগরি:</span> <a href="{{ route('categoryproductsbn', $product->category->category_slug_bn) }}"
-                            class="cg"
-                            id="category_name_bn">{{ $product->category->category_name_bn }}</a>
-                        </span>
-                      @else
                         <span class="posted_in"><span class="cb">Category:</span> <a href="{{ route('categoryproductsen', $product->category->category_slug_en) }}"
                             class="cg"
                             id="category_name_en">{{ $product->category->category_name_en }}</a>
                         </span>
-                      @endif
                     </div>
                     <div class="social-share tc">
                       <div class="at-share-btn-elements kalles-social-media d-block text-left fs__0 lh__1">
@@ -376,48 +328,13 @@
           <div class="medizin_laypout">
             <div class="product-cd-header in_flex wrap al_center fl_center tc">
               <h6 class="product-cd-heading section-title">
-                {{ session()->get('language') === 'bangla' ? 'More product' : 'More products' }}
+                {{ 'More products' }}
               </h6>
 
             </div>
             <div class="products nt_products_holder row fl_center row_pr_1 js_carousel nt_slider nt_cover ratio1_1 position_8 space_ prev_next_3 btn_owl_1 dot_owl_1 dot_color_1 btn_vi_2 equal_nt" data-flickity='{"imagesLoaded": 0,"adaptiveHeight": 0, "contain": 1, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": 1,"pageDots": false, "autoPlay" : 0, "pauseAutoPlayOnHover" : true, "rightToLeft": false }'>
 
               @forelse ($product->category->products->where('id', '!=', $product->id) as $product)
-              @if (session()->get('language') === 'bangla')
-              <div class="col-lg-15 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__2 tc">
-                <div class="product-inner pr">
-                  <div class="product-image pr oh lazyload">
-                    <span class="tc nt_labels pa pe_none cw"><span class="nt_label new {{ isset($product->discount) ? 'bg-danger' : '' }}">{{ isset($product->discount) ? '- '.$product->discount . ' %' : 'New' }}</span></span>
-                    <a class="d-block" href="{{ route('frontend.detailsbn',['category'=>$product->category->category_slug_bn,'slug'=>$product->product_slug_bn]) }}">
-                      <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload" data-bgset="/{{ $product->image }}"></div>
-                    </a>
-                    <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                      <div class="pr_lazy_img back-img pa nt_bg_lz lazyload" data-bgset="/{{ $product->image }}"></div>
-                    </div>
-
-                    <div class="hover_button op__0 tc pa flex column ts__03">
-
-                      <a  class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left  productView" href="#"  product_id={{ $product->id }}><span class="tt_txt">কার্টে যোগ করুন</span><i class="iccl iccl-cart"></i><span>কার্টে যোগ
-                          করুন</span></a>
-                    </div>
-                  </div>
-                  <div class="product-info mt__15">
-                    <div class="product-brand"><a class="cg chp" href="#">{{ $product->brand->brand_name_bn }}</a></div>
-                    <h3 class="product-title pr fs__14 mg__0 fwm">
-                      <a class="cd chp" href="{{ route('frontend.detailsbn',['category'=>$product->category->category_slug_bn,'slug'=>$product->product_slug_bn]) }}">{{ Str::limit($product->product_name_bn, 20, '...') }}</a>
-                    </h3>
-                    @if (isset($product->discount))
-                    <p class="price_range" id="price_qv">
-                      <del> ৳{{ $product->price }}</del>
-                      <ins> ৳{{ round($product->price - (($product->discount * $product->price) / 100)) }}</ins>
-                    </p>
-                    @else
-                    <span class="price dib mb__5"> ৳ {{ $product->price }} <span class="text-danger"></span></span>
-                    @endif
-                  </div>
-                </div>
-              </div>
-              @else
               <div class="col-lg-15 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__2 tc">
                 <div class="product-inner pr">
                   <div class="product-image pr oh lazyload">
@@ -451,7 +368,6 @@
                   </div>
                 </div>
               </div>
-              @endif
               @empty
               @endforelse
             </div>

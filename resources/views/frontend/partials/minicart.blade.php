@@ -2,7 +2,7 @@
 <div id="nt_cart_canvas" class="nt_fk_canvas dn">
   <div class="nt_mini_cart nt_js_cart flex column h__100 btns_cart_1">
     <div class="mini_cart_header flex fl_between al_center">
-      <div class="h3 fwm tu fs__16 mg__0">{{ session()->get('language') === 'bangla' ? 'শপিং কার্ট' : 'Shopping cart' }}</div>
+      <div class="h3 fwm tu fs__16 mg__0">Shopping cart</div>
       <i class="close_pp pegk pe-7s-close ts__03 cd"></i>
     </div>
 

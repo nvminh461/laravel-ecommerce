@@ -33,7 +33,6 @@ class SubCategoryController extends Controller
         Gate::authorize('app.categories.create');
         $this->validate($request, [
             'subcategory_name_en'    => 'required|string|unique:sub_categories,subcategory_name_en',
-            'subcategory_name_bn'    => 'required|string|unique:sub_categories,subcategory_name_bn',
             'image'                  => 'nullable|image|mimes:jpg,png,jpeg,svg',
             'category_id'            => 'required',
         ]);
@@ -41,8 +40,6 @@ class SubCategoryController extends Controller
             'category_id'            => $request->category_id,
             'subcategory_name_en'    => $request->subcategory_name_en,
             'subcategory_slug_en'    => ($request->subcategory_name_en),
-            'subcategory_name_bn'    => $request->subcategory_name_bn,
-            'subcategory_slug_bn'    => $this->make_slug($request->subcategory_name_bn),
             'status'                 => $request->filled('status'),
         ]);
         toastr()->success('SubCategory added successfully');
@@ -64,7 +61,6 @@ class SubCategoryController extends Controller
         Gate::authorize('app.categories.edit');
         $this->validate($request, [
             'subcategory_name_en'    => 'required|string|unique:sub_categories,subcategory_name_en,' . $subcategory->id,
-            'subcategory_name_bn'    => 'required|string|unique:sub_categories,subcategory_name_bn,' . $subcategory->id,
             'image'                  => 'nullable|image|mimes:jpg,png,jpeg,svg',
             'category_id'            => 'required',
         ]);
@@ -72,8 +68,6 @@ class SubCategoryController extends Controller
             'category_id'             => $request->category_id,
             'subcategory_name_en'     => $request->subcategory_name_en,
             'subcategory_slug_en'     => ($request->subcategory_name_en),
-            'subcategory_name_bn'     => $request->subcategory_name_bn,
-            'subcategory_slug_bn'     => $this->make_slug($request->subcategory_name_bn),
             'status'                  => $request->filled('status'),
         ]);;
         toastr()->success('SubCategory update successfully');

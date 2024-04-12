@@ -53,15 +53,6 @@
 
             </div>
             <div class="form-group">
-              <label class="col-form-label">Name(bn)</label>
-              <input type="text" class="form-control  @error('category_name_bn') is-invalid @enderror" name="category_name_bn" value="{{ $category->category_name_bn ?? old('category_name_bn') }}" placeholder="category_name_bn" {{ !isset($category) ? 'required' : '' }}>
-              @error('category_name_bn')
-              <span class="text-danger" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-              @enderror
-            </div>
-            <div class="form-group">
                 <label class="col-form-label">Icon class <span><a href="https://icons8.com/line-awesome" target="_blank">Line icon</a></span></label>
                 <input type="text" class="form-control  @error('icon') is-invalid @enderror" name="icon" value="{{ $category->icon ?? old('icon') }}" placeholder="icon" {{ !isset($category) ? 'required' : '' }}>
                 @error('icon')

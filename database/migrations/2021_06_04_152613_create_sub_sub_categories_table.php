@@ -24,14 +24,10 @@ class CreateSubSubCategoriesTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->string('subsubcategory_name_en');
-            $table->string('subsubcategory_name_bn');
             $table->string('subsubcategory_slug_en');
-            $table->string('subsubcategory_slug_bn');
             $table->boolean('status')->default(true);
             $table->text('meta_keywords_en')->nullable();
-            $table->text('meta_keywords_bn')->nullable();
             $table->text('meta_description_en')->nullable();
-            $table->text('meta_description_bn')->nullable();
             $table->timestamps();
         });
     }

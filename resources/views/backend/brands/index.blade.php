@@ -43,7 +43,6 @@ All Brands
             <th>#</th>
             <th>Image</th>
             <th>Name(en)</th>
-            <th>Name(bn)</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
@@ -61,7 +60,6 @@ All Brands
               </div>
             </td>
             <td>{{ $brand->brand_name_en }}</td>
-            <td>{{ $brand->brand_name_bn }}</td>
             <td>
               @if ($brand->status)
               <span class="badge badge-info rounded " data-toggle="tooltip" title="brand status is true &#128077">Active</span>

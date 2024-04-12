@@ -31,15 +31,12 @@ class CategoryController extends Controller
         Gate::authorize('app.categories.create');
         $this->validate($request, [
             'category_name_en'      => 'required|string|unique:categories,category_name_en',
-            'category_name_bn'      => 'required|string|unique:categories,category_name_bn',
             'image'                 => 'nullable|image|mimes:jpg,png,jpeg,svg',
         ]);
         $category = Category::create([
             'icon'                  => $request->icon,
             'category_name_en'      => $request->category_name_en,
             'category_slug_en'      =>  Str::slug($request->category_name_en),
-            'category_name_bn'      => $request->category_name_bn,
-            'category_slug_bn'      =>  $this->make_slug($request->category_name_bn),
             'status'                => $request->filled('status'),
         ]);
         $file                   = $request->hasFile('image');
@@ -67,7 +64,6 @@ class CategoryController extends Controller
     {
         $this->validate($request, [
             'category_name_en'      => 'required|string|unique:categories,category_name_en,'.$category->id,
-            'category_name_bn'      => 'required|string|unique:categories,category_name_bn,'.$category->id,
             'image'                 => 'nullable|image|mimes:jpg,png,jpeg,svg',
         ]);
         Gate::authorize('app.categories.edit');
@@ -75,8 +71,6 @@ class CategoryController extends Controller
             'icon'                  => $request->icon,
             'category_name_en'      => $request->category_name_en,
             'category_slug_en'      => Str::slug($request->category_name_en),
-            'category_name_bn'      => $request->category_name_bn,
-            'category_slug_bn'      => $this->make_slug($request->category_name_bn),
             'status'             => $request->filled('status'),
         ]);
         $file                    = $request->hasFile('image');

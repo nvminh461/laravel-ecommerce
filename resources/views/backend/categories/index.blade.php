@@ -43,7 +43,6 @@ All categories
             <th>#</th>
             <th>Image</th>
             <th>Name(en)</th>
-            <th>Name(bn)</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
@@ -62,7 +61,6 @@ All categories
               </div>
             </td>
             <td>{{ $category->category_name_en }}</td>
-            <td>{{ $category->category_name_bn }}</td>
             <td>
               @if ($category->status)
               <span class="badge badge-info rounded " data-toggle="tooltip" title="Category status is true &#128077">Active</span>

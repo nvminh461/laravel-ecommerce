@@ -11,11 +11,7 @@
       </div>
       <div class="col cl_pr_title tc">
         <h3 class="product-title pr fs__16 mg__0 fwm">
-          @if (session()->get('language')==='bangla')
-          <a id="product_name_bn2" class="cd chp" href="javascript:void(0)"> </a>
-          @else
           <a id="product_name_en2" class="cd chp" href="javascript:void(0)"> </a>
-          @endif
 
         </h3>
         <div id="price_qs"><span class="price ">
@@ -60,15 +56,9 @@
                       <i class="facl facl-minus"></i></button>
                   </div>
                 </div>
-                @if (session()->get('language')==='bangla')
-                <button type="submit" data-time='6000' data-ani='shake' class="single_add_to_cart_button button truncate js_frm_cart w__100 mt__20 order-4" onclick="addToCart()">
-                  <span class="txt_add ">কার্টে যোগ করুন</span>
-                </button>
-                @else
                 <button type="submit" data-time='6000' data-ani='shake' class="single_add_to_cart_button button truncate js_frm_cart w__100 mt__20 order-4" onclick="addToCart()">
                   <span class="txt_add ">Add to cart</span>
                 </button>
-                @endif
               </div>
             </div>
           </div>

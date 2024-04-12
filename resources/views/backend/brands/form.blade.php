@@ -52,15 +52,6 @@
               @enderror
 
             </div>
-            <div class="form-group">
-              <label class="col-form-label">Name(bn)</label>
-              <input type="text" class="form-control  @error('brand_name_bn') is-invalid @enderror" name="brand_name_bn" value="{{ $brand->brand_name_bn ?? old('brand_name_bn') }}" placeholder="brand_name_bn" {{ !isset($brand) ? 'required' : '' }}>
-              @error('brand_name_bn')
-              <span class="text-danger" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-              @enderror
-            </div>
           </div>
         </div>
       </div>

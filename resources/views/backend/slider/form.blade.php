@@ -53,15 +53,6 @@
 
             </div>
             <div class="form-group">
-              <label class="col-form-label">Title(bn)</label>
-              <input type="text" class="form-control  @error('title_bn') is-invalid @enderror" name="title_bn" value="{{ $slider->title_bn ?? old('title_bn') }}" placeholder="title_bn" {{ !isset($slider) ? 'required' : '' }}>
-              @error('title_bn')
-              <span class="text-danger" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-              @enderror
-            </div>
-            <div class="form-group">
               <label class="col-form-label">Description(en)</label>
               <input type="text" class="form-control  @error('description_en') is-invalid @enderror" name="description_en" value="{{ $slider->description_en ?? old('description_en') }}" placeholder="Description English" {{ !isset($slider) ? 'required' : '' }}>
               @error('description_en')
@@ -70,15 +61,6 @@
               </span>
               @enderror
             </div>
-            <div class="form-group">
-                <label class="col-form-label">Description(bn)</label>
-                <input type="text" class="form-control  @error('description_bn') is-invalid @enderror" name="description_bn" value="{{ $slider->description_bn ?? old('description_bn') }}" placeholder="Description Bangla" {{ !isset($slider) ? 'required' : '' }}>
-                @error('description_bn')
-                <span class="text-danger" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-                @enderror
-              </div>
           </div>
         </div>
       </div>

@@ -56,7 +56,7 @@
                     {{ $product->brand_id == $brand->id ? 'selected' : '' }}
                     @endisset
                     >
-                    {{ $brand->brand_name_en }} / {{ $brand->brand_name_bn }}
+                    {{ $brand->brand_name_en }}
                   </option>
                   @endforeach
                 </select>
@@ -70,7 +70,7 @@
                     {{ $product->category_id == $category->id ? 'selected' : '' }}
                     @endisset
                     >
-                    {{ $category->category_name_en }} / {{ $category->category_name_bn }}
+                    {{ $category->category_name_en }}
                   </option>
                   @endforeach
                 </select>
@@ -103,18 +103,6 @@
                 @enderror
               </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                  <label class="col-form-label">পণ্যের নাম <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control  @error('product_name_bn') is-invalid @enderror" name="product_name_bn" value="{{ $product->product_name_bn ?? old('product_name_bn') }}" placeholder="পণ্যের নাম">
-                  @error('product_name_bn')
-                  <span class="text-danger" product="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                  @enderror
-                </div>
-              </div>
-
             <div class="form-row">
               <div class="form-group col-md-12">
                 <label class="col-form-label">Quantity <span class="text-danger">*</span></label>
@@ -159,29 +147,11 @@
               </span>
               @enderror
             </div>
-            <div class="form-group">
-              <label class="col-form-label">সংক্ষিপ্ত বিবরণ </label>
-              <textarea name="short_description_bn" id="short_description_bn" class="form-control  @error('short_description_bn') is-invalid @enderror" placeholder="সংক্ষিপ্ত বিবরণ">আমার বাংলা নিয়ে প্রথম কাজ করবার সুযোগ তৈরি হয়েছিল অভ্র^ নামক এক যুগান্তকারী বাংলা সফ্‌টওয়্যার হাতে পাবার মধ্য দিয়ে। এর পর একে একে </textarea>
-              @error('short_description_bn')
-              <span class="text-danger" product="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-              @enderror
-            </div>
 
             <div class="form-group">
               <label class="col-form-label">Long description <span class="text-danger">*</span></label>
               <textarea name="long_description_en" id="long_description_en" class="form-control" required>{{ $product->long_description_en ?? old('long_description_en') }}</textarea>
               @error('long_description_en')
-              <span class="text-danger" product="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-              @enderror
-            </div>
-            <div class="form-group">
-              <label class="col-form-label">দীর্ঘ বিবরণ <span class="text-danger">*</span></label>
-              <textarea name="long_description_bn" id="long_description_bn" class="form-control" required>{{ $product->long_description_bn ?? old('long_description_bn') }}</textarea>
-              @error('long_description_bn')
               <span class="text-danger" product="alert">
                 <strong>{{ $message }}</strong>
               </span>
@@ -209,17 +179,6 @@
                 <label class="col-form-label">Product tags <span class="text-danger">*</span></label>
                 <input type="text" data-role="tagsinput" class="form-control  @error('product_tags_en') is-invalid @enderror" name="product_tags_en" value="Product tags" placeholder="Product tags English" {{ !isset($product) ? '' : '' }}>
                 @error('product_tags_en')
-                <span class="text-danger" product="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-                @enderror
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col">
-                <label class="col-form-label">পণ্য ট্যাগ <span class="text-danger">*</span></label>
-                <input type="text" data-role="tagsinput" class="form-control  @error('product_tags_bn') is-invalid @enderror" name="product_tags_bn" value="পণ্য ট্যাগ" placeholder="বাংলায় পণ্য ট্যাগ" {{ !isset($product) ? '' : '' }}>
-                @error('product_tags_bn')
                 <span class="text-danger" product="alert">
                   <strong>{{ $message }}</strong>
                 </span>
@@ -289,27 +248,9 @@
             </div>
 
             <div class="form-group">
-              <label class="col-form-label">মেটা কীওয়ার্ড</label>
-              <textarea name="meta_keywords_bn" id="meta_keywords_bn" class="form-control  @error('title') is-invalid @enderror" placeholder="মেটা কীওয়ার্ড">{{ $product->meta_keywords_bn ?? old('meta_keywords_bn') }}</textarea>
-              @error('meta_keywords_bn')
-              <span class="text-danger" product="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-              @enderror
-            </div>
-            <div class="form-group">
               <label class="col-form-label">Meta Description</label>
               <textarea name="meta_description_en" id="meta_description_en" class="form-control  @error('title') is-invalid @enderror" placeholder="Meta description">{{ $product->meta_description_en ?? old('meta_description_en') }}</textarea>
               @error('meta_description_en')
-              <span class="text-danger" product="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-              @enderror
-            </div>
-            <div class="form-group">
-              <label class="col-form-label">মেটা বিবরণ</label>
-              <textarea name="meta_description_bn" id="meta_description_bn" class="form-control  @error('title') is-invalid @enderror" placeholder="মেটা বিবরণ">{{ $product->meta_description_bn ?? old('meta_description_bn') }}</textarea>
-              @error('meta_description_bn')
               <span class="text-danger" product="alert">
                 <strong>{{ $message }}</strong>
               </span>
@@ -413,13 +354,6 @@
 <script src="{{ asset('/') }}backend/assets/plugins/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
   CKEDITOR.replace('long_description_en', {
-    filebrowserBrowseUrl: filemanager.ckBrowseUrl
-  });
-  CKEDITOR.add
-
-</script>
-<script type="text/javascript">
-  CKEDITOR.replace('long_description_bn', {
     filebrowserBrowseUrl: filemanager.ckBrowseUrl
   });
   CKEDITOR.add

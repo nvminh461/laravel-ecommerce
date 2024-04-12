@@ -19,8 +19,6 @@ class BrandSeeder extends Seeder
             Brand::updateOrCreate([
                 'brand_name_en' => 'Brand-' . $i,
                 'brand_slug_en' => 'brand-' . $i,
-                'brand_name_bn' => 'ব্র্যান্ড-' . $i,
-                'brand_slug_bn' => 'ব্র্যান্ড-' . $i,
                 'status' => true,
             ]);
         }

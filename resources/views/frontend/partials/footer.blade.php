@@ -19,7 +19,7 @@
                     </p>
                     <p>
                       <i class="pegk pe-7s-map-marker"> </i><span>5100, Thakurgaon  <br>
-                        <span class="pl__30">Rangpur, Bangladesh</span></span>
+                        <span class="pl__30">Rangpur, VietNam</span></span>
                     </p>
                     <p><i class="pegk pe-7s-mail"></i>
                       <span><a href="https://themes.the4.co/cdn-cgi/l/email-protection#56353938223735221635393b2637382f7835393b"><span class="__cf_email__" data-cfemail="2e4d41405a4f4d5a6e4d41435e4f4057004d4143">zuyel76@gmail.com</span></a></span>
@@ -50,18 +50,14 @@
             <div class="col-lg-2 col-md-6 col-12 mb__50 order-lg-2 order-1">
               <div class="widget widget_nav_menu">
                 <h3 class="widget-title fwsb flex al_center fl_between fs__16 mg__0 mb__30">
-                  <span class="txt_title">  {{ (session()->get('language') === 'bangla') ? 'ক্যাটাগরি' : 'Categories'}} </span>
+                  <span class="txt_title"> Categories </span>
                   <span class="nav_link_icon ml__5"></span>
                 </h3>
                 <div class="menu_footer widget_footer">
                   <ul class="menu">
                     @foreach ($categoriesfooter as $category)
                     <li class="menu-item">
-                    @if (session()->get('language') === 'bangla')
-                    <a href="{{ $category->category_name_bn }}">{{ $category->category_name_bn }}</a>
-                    @else
                     <a href="{{ $category->category_name_en }}">{{ $category->category_name_en }}</a>
-                    @endif
 
 
                     </li>

@@ -3,7 +3,7 @@
     @if (!empty($subcategories))
     @foreach ($subcategories as $subcategory)
     <option value="{{ $subcategory->id }}" {{ $subcategory->id==$product->subcategory_id?'selected':'' }}>
-        {{ $subcategory->subcategory_name_en }} / {{ $subcategory->subcategory_name_bn }}
+        {{ $subcategory->subcategory_name_en }}
     </option>
     @endforeach
     @endif
@@ -12,7 +12,7 @@
     <option value="">Select Sub Category</option>
     @foreach ($categorywithSubcategory->subcategories as $subcategory)
     <option value="{{ $subcategory->id }}">
-        {{ $subcategory->subcategory_name_en }} / {{ $subcategory->subcategory_name_bn }}
+        {{ $subcategory->subcategory_name_en }}
     </option>
     @endforeach
     @endif

@@ -35,7 +35,6 @@ class SubSubcategoryController extends Controller
         Gate::authorize('app.categories.create');
         $this->validate($request, [
             'subsubcategory_name_en'    => 'required|string',
-            'subsubcategory_name_bn'    => 'required|string',
             'category_id'               => 'required',
         ]);
         SubSubCategory::create([
@@ -43,8 +42,6 @@ class SubSubcategoryController extends Controller
             'subcategory_id'            => $request->subcategory_id1,
             'subsubcategory_name_en'    => $request->subsubcategory_name_en,
             'subsubcategory_slug_en'    => Str::slug($request->subsubcategory_name_en),
-            'subsubcategory_name_bn'    => $request->subsubcategory_name_bn,
-            'subsubcategory_slug_bn'    => $this->make_slug($request->subsubcategory_name_bn),
             'status'                    => $request->filled('status'),
         ]);
         toastr()->success('Subsubcategory added successfully');
@@ -67,7 +64,6 @@ class SubSubcategoryController extends Controller
         Gate::authorize('app.categories.edit');
         $this->validate($request, [
             'subsubcategory_name_en'    => 'required|string',
-            'subsubcategory_name_bn'    => 'required|string',
             'image'                     => 'nullable|image|mimes:jpg,png,jpeg,svg',
             'category_id'               => 'required',
         ]);
@@ -76,8 +72,6 @@ class SubSubcategoryController extends Controller
             'subcategory_id'            => $request->subcategory_id1,
             'subsubcategory_name_en'    => $request->subsubcategory_name_en,
             'subsubcategory_slug_en'    => Str::slug($request->subsubcategory_name_en),
-            'subsubcategory_name_bn'    => $request->subsubcategory_name_bn,
-            'subsubcategory_slug_bn'    => $this->make_slug($request->subsubcategory_name_bn),
             'status'                    => $request->filled('status'),
         ]);;
         toastr()->success('Subsubcategory update successfully');

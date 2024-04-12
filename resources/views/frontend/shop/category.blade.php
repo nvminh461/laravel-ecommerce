@@ -81,35 +81,20 @@
 
 @section('content')
   <div id="nt_content">
-    @if (session()->get('language') === 'bangla')
-      <input type="hidden"
-        class="url"
-        name="url"
-        value="{{ $category->category_slug_bn }}">
-
-    @else
       <input type="hidden"
         class="url"
         name="url"
         value="{{ $category->category_slug_en }}">
-    @endif
 
     <!-- breadcrumb -->
     <div class="bgbl pt__20 pb__20 lh__1">
       <div class="container">
         <div class="row al_center">
           <div class="col">
-            @if (session()->get('language') === 'bangla')
-              <nav class="sp-breadcrumb">
-                <a href="{{ route('frontend.home') }}">হোম</a><i
-                  class="facl facl-angle-right"></i>{{ $category->category_name_bn }}
-              </nav>
-            @else
               <nav class="sp-breadcrumb">
                 <a href="{{ route('frontend.home') }}">Home</a><i
                   class="facl facl-angle-right"></i>{{ $category->category_name_en }}
               </nav>
-            @endif
 
           </div>
         </div>
@@ -119,11 +104,7 @@
     @if (count($category->products) <= 0)
       <div class="kalles-section cat-shop pr tc p-5">
         <h1 class="text-center text-danger">
-          @if (session()->get('language') === 'bangla')
-            শীঘ্রই আসছে !
-          @else
             Comming Soon !
-          @endif
         </h1>
         <button type="submit"
           data-time="6000"
@@ -131,11 +112,7 @@
           class="button truncate  mt__20 order-4  animated "
           onclick="location.href='{{ route('frontend.home') }}';">
           <span>
-            @if (session()->get('language') === 'bangla')
-              হোম
-            @else
               Home
-            @endif
           </span>
         </button>
       </div>

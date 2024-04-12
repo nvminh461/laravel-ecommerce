@@ -16,11 +16,7 @@
           <div class="gecko-scroll-content-quick">
             <div class="kalles-section-pr_summary kalles-section summary entry-summary mt__30">
               <h1 class="product_title entry-title fs__16">
-                @if (session()->get('language')==='bangla')
-                <a id="product_name_bn" href=" product_name"></a>
-                @else
                 <a id="product_name_en" href=" product_name"></a>
-                @endif
 
               </h1>
               <div class="flex wrap fl_between al_center price-review">
@@ -42,11 +38,7 @@
                 </a>
               </div>
               <div class="pr_short_des">
-                @if (session()->get('language')==='bangla')
-                <p class="mg__0" id="short_description_bn"></p>
-                @else
                 <p class="mg__0" id="short_description_en"></p>
-                @endif
 
               </div>
               <div class="btn-atc atc-slide btn_des_1 btn_txt_3">
@@ -82,15 +74,9 @@
                           </div>
                         </div>
                         <input type="hidden" id="product_id">
-                        @if (session()->get('language')==='bangla')
-                        <button type="submit" data-time='6000' data-ani='shake' class="single_add_to_cart_button button truncate js_frm_cart w__100 mt__20 order-4"  onclick="addToCart()">
-                          <span class="txt_add ">কার্টে যোগ করুন</span>
-                        </button>
-                        @else
                         <button type="submit" data-time='6000' data-ani='shake' class="single_add_to_cart_button button truncate js_frm_cart w__100 mt__20 order-4" onclick="addToCart()">
                           <span class="txt_add ">Add to cart</span>
                         </button>
-                        @endif
                       </div>
                     </div>
                   </div>
@@ -103,13 +89,8 @@
               <div class="product_meta">
                 <span class="sku_wrapper"><span class="cb">SKU:</span> <span id="sku" class="sku value cg"></span></span>
 
-                @if (session()->get('language')==='bangla')
-                <span class="posted_in"><span class="cb">ক্যাটাগরি:</span> <a href="" class="cg" id="category_name_bn"></a>
-                </span>
-                @else
                 <span class="posted_in"><span class="cb">Category:</span> <a href="" class="cg" id="category_name_en"></a>
                 </span>
-                @endif
               </div>
               <div class="social-share tc">
                 <div class="at-share-btn-elements kalles-social-media d-block text-left fs__0 lh__1">

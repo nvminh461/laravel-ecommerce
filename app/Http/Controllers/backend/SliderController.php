@@ -30,14 +30,11 @@ class SliderController extends Controller
         Gate::authorize('app.sliders.create');
         $this->validate($request, [
             'title_en'          => 'required|string|unique:sliders,title_en',
-            'title_bn'          => 'required|string|unique:sliders,title_bn',
             'slider_img'        => 'required|image|mimes:jpg,png,jpeg,svg',
         ]);
         $slider = Slider::create([
             'title_en'          => $request->title_en,
-            'title_bn'          => $request->title_bn,
             'description_en'    => $request->description_en,
-            'description_bn'    => $request->description_bn,
             'status'            => $request->filled('status'),
             'slider_img'        => $this->uploadeImage($request)
         ]);
@@ -66,9 +63,7 @@ class SliderController extends Controller
         Gate::authorize('app.sliders.edit');
         $slider->update([
             'title_en'          => $request->title_en,
-            'title_bn'          => $request->title_bn,
             'description_en'    => $request->description_en,
-            'description_bn'    => $request->description_bn,
             'status'            => $request->filled('status'),
         ]);
         $file                   = $request->hasFile('slider_img');

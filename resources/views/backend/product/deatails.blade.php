@@ -62,13 +62,6 @@ Product details
         <p>{!! $product->long_description_en !!}</p>
       </div>
     </div>
-    <div class="card">
-      <div class="card-body">
-        <h2>দীর্ঘ বিবরণ</h2>
-        <p>{!! $product->long_description_bn !!}</p>
-      </div>
-    </div>
-
   </div>
   <div class="col-12 col-lg-3">
     <div class="card">
@@ -77,21 +70,16 @@ Product details
         <p style="font-size:18px">Product Code <span class="badge badge-primary" style="font-size:13px">{{ $product->product_code }}</span></p>
 
         <p style="font-size:18px">Price <span style="font-size:13px">{{ $product->price_en }} Taka</span></p>
-        <p style="font-size:18px">মূল্য <span style="font-size:13px">{{ $product->price_bn }} টাকা</span></p>
         <hr>
         <p style="font-size:18px">Size Available <span style="font-size:13px">{{ $product->size }}</span></p>
         <hr>
         <p style="font-size:18px">Color <span style="font-size:13px">{{ $product->product_color_en }}</span></p>
-        <p style="font-size:18px">রং <span style="font-size:13px">{{ $product->product_color_bn }}</span></p>
         <hr>
         <p style="font-size:18px">Category <span class="badge badge-info" style="font-size:13px">{{ $product->category->category_name_en }}</span></p>
-        <p style="font-size:18px">ক্যাটাগারি <span class="badge badge-success" style="font-size:13px">{{ $product->category->category_name_en }}</span></p>
         <hr>
         <p style="font-size:18px">Brand <span class="badge badge-warning" style="font-size:13px">{{ $product->brand->brand_name_en }}</span></p>
-        <p style="font-size:18px">ব্র্যান্ড <span class="badge badge-secondary" style="font-size:13px">{{ $product->brand->brand_name_en }}</span></p>
         <hr>
         <p style="font-size:18px">Last Modified <span style="font-size:13px">{{ $product->updated_at->diffForHumans() }}</span></p>
-        <p style="font-size:18px">শেষ পরিবর্তন <span style="font-size:13px">{{ $product->updated_at->diffForHumans() }}</span></p>
 
       </div>
     </div>
