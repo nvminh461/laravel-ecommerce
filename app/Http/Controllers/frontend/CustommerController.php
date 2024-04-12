@@ -30,6 +30,11 @@ class CustommerController extends Controller
 
         return view('frontend.custommer.wishlistdata');
     }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('frontend.home');
+    }
     public function wishlistdataget()
     {
         if (Auth::check()) {

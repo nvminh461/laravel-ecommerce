@@ -18,11 +18,6 @@ User Login
             </div>
             <a href="{{ route('login.provider', 'google') }}" class="form-control  border-0 " value="Log in with google">Log in with google</a>
           </div>
-          <div class="input-group shadow-sm rounded mt-5">
-            <div class="input-group-prepend"> <span class="input-group-text bg-transparent border-0 cursor-pointer"><img src="{{ asset('/') }}backend/assets/images/icons/github.png" alt="" width="16"></span>
-            </div>
-            <a href="{{ route('login.provider', 'github') }}" class="form-control  border-0 " value="Log in with google">Log in with github</a>
-          </div>
           <br>
           <form class="theme-form" action="{{ route('login') }}" method="post">
             @csrf

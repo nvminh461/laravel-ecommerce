@@ -27,10 +27,8 @@ Route::group(['as' => 'login.', 'prefix' => 'login'], function () {
 
 //Multi language
 Route::get('language/english', [LanguageController::class, 'English'])->name('language.english');
-Route::get('language/bangla',  [LanguageController::class, 'Bangla'])->name('language.bangla');
 
 // Custommer
-Route::get('/user/login', [CustommerController::class, 'login'])->name('user.login');
 Route::get('/user/register', [CustommerController::class, 'register'])->name('user.register');
 Route::get('/user/dashboard', [CustommerController::class, 'index'])->middleware('auth')->name('user.index');
 Route::get('/user/wishlist', [CustommerController::class, 'wishlistdata'])->name('user.wishlistdata')->middleware('auth');
@@ -40,6 +38,7 @@ Route::post('/wishlist/product-remove/{product_id}', [CustommerController::class
 Route::post('/user/coupon/apply', [CustommerController::class, 'applyCoupon']);
 Route::get('/coupons/calculate', [CustommerController::class, 'calculateCoupon']);
 Route::get('/user/coupon-remove', [CustommerController::class, 'couponRemove']);
+Route::get('/user/logout', [CustommerController::class, 'logout'])->name('user.logout');
 
 
 Route::get('/', [HomeController::class, 'index'])->name('frontend.home');
